@@ -1,143 +1,138 @@
+Skip to content
+ 
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@gzsong1 
+1
+1 1 harray/js_api
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Security  Insights
+You’re editing a file in a project you don’t have write access to. We’ve created a fork of this project for you to commit your proposed changes to. Submitting a change to this file will write it to a new branch in your fork, so you can send a pull request.
+js_api
+/
+LaunchPage.html
+ 
+
+1
+<!DOCTYPE html>
+2
 <html>
-<head>
-	<title>harray test js api api api api api api api api</title>
-	<meta http-equiv="Content-Type"  content="text/html;charset=utf8">
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
-	<script language="JavaScript" src="testjs.js"></script>
-	<script type="text/javascript">
-		function openPage() {
-			window.open("secondPage.html");
-		}
-		function locationPage() {
-			window.location.href="secondPage.html";
-		}
-		function test() {
-			alert("harray test");
-		}
-        function getInfo() {
-            document.getElementById("name").text = "";
-            document.getElementById("mainLogin").text = "";
-            document.getElementById("isVip").text = "";
-            document.getElementById("vipLevel").text = "";
-
+3
+<head lang="en">
+4
+        <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+5
+    <meta charset="UTF-8">
+6
+    <title></title>
+7
+        <script type="text/javascript">
+8
+        function gotoPid() {
+9
+                var pid = document.getElementById("pid").value;
+10
+                //location.href = "tenvideo2://?action=11&program_id=" + pid + "&program_type=0";
+11
+                location.href = "txvideo://v.qq.com/TencentLiveActivity?pid=" + pid + "&isFullScreen=0";
+12
         }
-	</script>
+13
+        function gotoWheMePid() {
+14
+                var pid = document.getElementById("whymepid").value;
+15
+                //location.href = "tenvideo2://?action=11&program_id=" + pid + "&program_type=0";
+16
+                location.href = "txvideo://v.qq.com/TencentLiveActivity?pid=" + pid + "&style=1&streamStyle=1";
+17
+        }
+18
+        function gotoQAPid() {
+19
+                var pid = document.getElementById("qapid").value;
+20
+                //location.href = "tenvideo2://?action=11&program_id=" + pid + "&program_type=0";
+21
+                location.href = "txvideo://v.qq.com/LiveQAGameActivity?pid=" + pid;
+22
+        }
+23
+        function gotoStarId() {
+24
+                var starid = document.getElementById("starid").value;
+25
+                location.href = "txvideo://v.qq.com/FanCircleActivity?starid=" + starid + "";
+26
+        }
+27
+        </script>
+28
 </head>
-<body onload="getInfo()">
-<B>harray test jsapi page</B>
-
-<div>
-    <br><br><br>
-    <B>测试页面来着</B>
-    <br>
-    您当前登录的用户为：<input type='text' id='name'/><br>
-    号码为：<input type='text' id='uin'/><br>
-    头像为：<br>
-    <img id='headImage'>    
-    <br>
-    主登录为：<input type='text' id='mainLogin'/><br>
-    是会员么：<input type='text' id='isVip'/><br>
-    会员等级为：<input type='text' id='vipLevel'/><br>
-    当前位置为：<input type='text' id='location'/><br>
-    <button onclick="getPageInfo()">获取信息</button>
-
-    <!--
-	<button onclick="test()">just test</button>
-	<button onclick="jsAlert()">js alert</button><br /><br />
-	<button onclick="download()">download</button>
-	<button onclick="toast()">toast</button>
-	<button onclick="qqVip2WX()">qqVip2WX</button>
-	<br><B>Weixin</B><br>
-	<button onclick="launchAppPkgName('weixin')">launchAppPkgName</button>
-	<button onclick="launchAppScheme('weixin')">launchAppScheme</button>
-	<br><B>QQ</B><br>
-	<button onclick="launchAppPkgName('mqqapi')">launchAppPkgName</button>
-	<button onclick="launchAppScheme('mqqapi')">launchAppScheme</button>
-	<br><B>腾讯新闻</B><br>
-	<button onclick="launchAppPkgName('qqnews')">launchAppPkgName</button>
-	<button onclick="launchAppScheme('qqnews')">launchAppScheme</button>
-	<br><B>QQ浏览器</B><br>
-	<button onclick="launchAppPkgName('mqqbrowser')">launchAppPkgName</button>
-	<button onclick="launchAppScheme('mqqbrowser')">launchAppScheme</button>
-	<br><B>QQ浏览器</B><br>
-	<button onclick="launchAppPkgName('abc')">launchAppPkgName:abc</button>
-	<button onclick="launchAppSchemeWithParam('weixin')">launchAppSchemeWithParam:weixin</button>
-	<button onclick="launchAppSchemeWithParam('abc')">launchAppSchemeWithParam:abc</button>
-	<br>
-	<button onclick="launchTencentVideo()">launchTencentVideo</button>
-	<br>
-	<br>
-	<button onclick="openPage()">open page</button>
-	<button onclick="locationPage()">location page</button>
-	<a href="secondPage.html">href</a>
-	<button onclick="openUrl('http://harray.qq.com/jsapi/secondPage.html')">openUrl()</button>
-	<br><br>
-	<button onclick="goBack()">goBack</button>
-	<button onclick="aclose()">close</button>
-	<br><br>
-    <button onclick="clickToastBtn()">toast</button>
-    <button onclick="SetMoreInfo()">SetMoreInfo</button>
-    <button onclick="testCallback()">testCallback</button>
-    <button onclick="gotoHomepage()">gotoHomepage</button>
-    <button onclick="checkApi()">checkApi</button><br><br>
-    <B>Login</B><br>
-    <button onclick="login('qq')">loginQQ</button>
-    <button onclick="login('wx')">loginWX</button>
-    <button onclick="login('tv')">loginTV</button>
-    <button onclick="getMainLogin()">getMainLogin</button><br><br>
-    <B>Check Login</B><br>
-    <button onclick="getUserInfo(['qq','wx', 'tv'])">getUserInfo(['qq','wx', 'tv'])</button>
-    <button onclick="getCookie(['qq','wx','tv'])">getCookie(['qq','wx','tv'])</button><br><br>
-    <button onclick="getMainCookie()">getMainCookie</button>
-    <button onclick="getAppInfo()">getAppInfo</button>
-    <button onclick="getDeviceInfo()">getDeviceInfo</button><br><br>
-    <button onclick="getMainLoginType()">getMainLoginType</button>
-    <button onclick="getMainUserInfo()">getMainUserInfo</button>
-    <button onclick="openToolsDialog()">openToolsDialog</button><br><br>
-    <button onclick="isAppInstalled()">isWeiXinInstalled</button>
-    <button onclick="isAppInstalled1()">isWeiXinInstalled1</button>
-    <button onclick="launchApp()">launchApp</button>
-    <button onclick="cacheVideo()">cacheVideo</button><br><br>
-    <button onclick="getNetworkState()">getNetworkState</button>
-    <button onclick="getLocation()">getLocation</button>
-    <button onclick="preViewPhotos()">preViewPhotos</button>
-    <button onclick="copyToClipBoard()">copyToClipBoard</button>
-    <button onclick="downloadFile()">downloadFile</button><br><br>
-    <button onclick="getPayVip()">getPayVip</button>
-    <button onclick="getTicketNum()">getTicketNum</button><br><br>
-    <button onclick="openView('tenvideo2://?action=45&newtenvideo2=1&dataKey=637&title=harray3%e6%b5%8b%e8%af%95&callback=weixin%3A%2F%2F&sender=weixin')">openView游戏底层页</button>
-    
-    <br><br>
-    
-    <button onclick="shareInfo('shareWeixinTimeline')">shareWeiXinTimeline</button>
-    <button onclick="shareInfo('shareWeixinUser')">shareWeiXinUser</button>
-    <button onclick="shareInfo('shareQQUser')">shareQQUser</button><br><br>
-    <button onclick="shareInfo('shareQzone')">shareQzone</button>
-    <button onclick="shareInfo('shareTxWeibo')">shareTxWeibo</button>
-    <button onclick="shareInfo('shareSinaWeibo')">shareSinaWeibo</button><br><br>
-    <button onclick="actionFollow('lid')">栏目关注</button>
-    <button onclick="actionFollow('cid')">专辑关注</button>
-    <button onclick="actionFollow('vid')">单视频关注</button><br><br>
-    <button onclick="actionFollow('gamepid')">游戏直播关注</button>
-    <button onclick="actionFollow('sportpid')">体育直播关注</button>
-    <button onclick="actionFollow('newpid')">新直播关注</button><br><br>
-    <button onclick="getLocation()">getLocation</button>
-    <button onclick="openToolsDialog()">openToolsDialog</button><br><br>
-    <input type="file" id="file"/>
-    <input type="button" value="读取二进制" onclick="readAsbinaryString()"/>
-
--->
-	<!--<input type="file" onchange="onFileChanged(this)"/>-->
-    <!--<button onclick="gotoDouban()">gotoDouban</button>-->
-    <!--<button onclick="hideH5()">hideH5</button>-->
-
-</div>
-<div>
-
-</div>
-<div id="hello_div"></div>
-<div>
-	<img id="img1" src=""/>
-</div>
-</body>
-</html>
+29
+<body>
+30
+<br><br>
+31
+<input type="text" id="pid"/><button onclick="gotoPid()">进入直播底层页</button><br>
+32
+<input type="text" id="whymepid"/><button onclick="gotoWheMePid()">进入Why Me底层页</button><br>
+33
+<input type="text" id="qapid"/><button onclick="gotoQAPid()">进入直播答题底层页</button><br>
+34
+<input type="text" id="starid"/><button onclick="gotoStarId()">进入明星饭团</button><br>
+35
+<br><br>
+36
+​
+37
+<a href="http://a.b.com/universalLink.html">universal link页面</a><br><br>
+38
+<a href="http://m.v.qq.com/universalLink.html">同域名的universal link页面</a><br><br>
+39
+<a href="http://m.v.qq.com/activity/debug/qqlivebroadcast_panel.html">企鹅直播切换环境</a><br><br>
+40
+<a href="http://m.v.qq.com/activity/debug/historylog.html?rcv=harrayhu">日志上报</a><br><br>
+41
+<a href="wxca942bbff22e0e51://tenvideo2://">春哥测试</a><br><br>
+42
+<a href="txvideo://v.qq.com/Html5Activity?url=http%3a%2f%2fdev.film.qq.com%2fweixin%2f4y%2f4y_live.html">打开H5</a><br><br>
+43
+<a href="txvideo://v.qq.com/Html5Activity?url=http%3a%2f%2fharray.github.io%2fjs_api%2ftest_js_bridge.html">拉起js api测试H5</a><br><br>
+44
+<a href="txvideo://v.qq.com/Html5Activity?url=http%3a%2f%2fadnew.qq.com%2flab%2fcasperTest%2fnew_api_test5.html">WZ</a><br><br>
+45
+<a href="tenvideo2://?action=1&cover_id=8evm9jm5j6rerso&isSpecial=1&userid=1500006&nickname=%E7%95%AA%E8%8C%84%E5%90%9B(%EF%BF%A3%CF%81%EF%BF%A3)&userType=wx&needAuthorize=1&textType=1&callback=weixin%3A%2F%2F&sender=%e5%be%ae%e4%bf%a1&jumpaction=1000">jon</a><br><br>
+46
+<a href="tenvideo2://?action=11&program_id=18502&program_type=0">H5静音18502</a><br><br>
+47
+<a href="tenvideo2://?action=11&program_id=200166&program_type=0">明星聊天室 200166</a><br><br>
+48
+<a href="tenvideo2://?action=53&rssId=344896363&rssName=%E6%B4%8B%E8%91%B1">洋葱的V+</a><br><br> 
+49
+<a href="tenvideo2://?action=53&rssId=3147118318&rssName=%E6%B4%8B%E8%91%B1">晓阳的V+</a><br><br> 
+50
+<a href="tenvideo2://?action=53&rssId=2078271142">2078271142 只有V+</a><br><br> 
+@gzsong1
+Propose file change
+Commit summary 
+Update LaunchPage.html
+Optional extended description
+Add an optional extended description…
+ 
+© 2019 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
